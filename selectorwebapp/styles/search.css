@@ -5,6 +5,7 @@ body {
 table {
     overflow-y: scroll;
     margin: 0;
+    font-size: max(18px, 1.3vh);
 }
 
 th, td {
@@ -15,7 +16,6 @@ th, td {
 }
 
 td {
-    font-size: 18px;
     text-wrap: wrap;
     padding: 10px;
 }

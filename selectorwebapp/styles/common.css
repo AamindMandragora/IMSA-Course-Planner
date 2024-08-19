@@ -9,9 +9,14 @@ body {
     align-items: center;
     background-color: white;
     color: #19325a;
-    font-size: 24px;
+    font-size: max(24px, 1.5vh);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow: hidden;
+}
+
+button, input, select {
+    font-size: max(18px, 1.3vh);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main {
@@ -49,15 +54,15 @@ header a {
 }
 
 footer {
-    font-size: 18px;
+    font-size: max(18px, 1.3vh);
 }
 
 #title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40vw;
-    font-size: 1vw;
+    width: max(40vw, 40vh);
+    font-size: max(1vw, 1vh);
 }
 
 a {

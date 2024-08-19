@@ -7,13 +7,17 @@ body {
     --mod6: #a0c4ff;
     --mod7: #bdb2ff;
     --mod8: #ffc6ff;
-    font-size: 18px;
-    line-height: 4vh;
+    font-size: max(18px, 1.3vh);
+    line-height: min(3vh, 4vw);
+}
+
+h2 {
+    margin-bottom: 0;
 }
 
 table {
     max-width: 84vw;
-    margin-bottom: 2vh;
+    margin: 2vh 0;
 }
 
 th {
@@ -50,7 +54,7 @@ td {
 #semester {
     display: flex;
     justify-content: space-evenly;
-    width: 15vw;
+    width: max(15vw, 15vh);
 }
 
 #given, #wanted {
@@ -64,6 +68,7 @@ td {
     border: 1px solid #19325a;
     border-radius: 50px;
     margin: 0.5vh 0;
+    max-width: 20vw;
 }
 
 .givenclass option, .newclass option {
@@ -110,4 +115,8 @@ td {
 
 #errors {
     color: red;
+}
+
+#output {
+    flex-direction: column;
 }
