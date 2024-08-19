@@ -228,9 +228,6 @@ function checkSemester(data, coursesRequested, coursesGiven, prerequisites=[]) {
             if (slots.count(-1) < out.count(-1)) {
                 out = slots;
             }
-            if (out.count(-1) == maxmods) {
-                break;
-            }
         }
     }
     return out;
