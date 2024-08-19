@@ -27,6 +27,9 @@ for page in doc:
             text += '1'
         rows.append(text)
 
+rows = set(rows)
+rows = list(rows)
+
 for i in range(len(rows)):
     calc = rows[i].split("\t")
     if len(calc) == 5:
