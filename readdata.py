@@ -29,6 +29,11 @@ for page in doc:
 
 for i in range(len(rows)):
     calc = rows[i].split("\t")
+    if len(calc) == 5:
+        sem = calc[2].split(' ')[0]
+        teach = " ".join(calc[2].split(' ')[1:])
+        calc[2] = sem
+        calc.insert(3, teach)
     if len(calc) == 6:
         for i in range(len(calc)):
             if i == 4:
@@ -56,6 +61,7 @@ for i in range(len(rows)):
                 rrows[i].append(calc[i])
 
 df = DataFrame({'Section': rrows[0], 'Name': rrows[1], 'Term': rrows[2], 'Teacher': rrows[3], 'Mods': rrows[4], 'Open': rrows[5]})
+print(df)
 f = open(jsonpath)
 courses = json.load(f)
 for i in range(len(courses)):
@@ -80,9 +86,6 @@ for i in range(len(df)):
                     courses[j]['adddrop'][1][1].append(int(df['Mods'][i]))
                 courses[j]['offerings'][1].append([df['Section'][i], df['Teacher'][i], int(df['Mods'][i])])
             break
-
-for i in range(len(courses)):
-    print(courses[i]['name'], courses[i]['adddrop'], courses[i]['offerings'])
 
 f.close()
 
