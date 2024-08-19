@@ -1,0 +1,70 @@
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: #19325a;
+    font-size: 24px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+}
+
+main {
+    width: 100vw;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80vh;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    height: 80vh;
+    margin: 1vh 0;
+}
+
+header, footer {
+    margin: 0;
+    width: 90vw;
+    background-color: #19325a;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+    color: black;
+    height: 10vh;
+    color: white;
+}
+
+header a {
+    color: white;
+}
+
+footer {
+    font-size: 18px;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    font-size: 1vw;
+}
+
+a {
+    color: #00aed9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,113 @@
+body {
+    --mod1: #ffadad;
+    --mod2: #ffd6a5;
+    --mod3: #fdffb6;
+    --mod4: #caffbf;
+    --mod5: #9bf6ff;
+    --mod6: #a0c4ff;
+    --mod7: #bdb2ff;
+    --mod8: #ffc6ff;
+    font-size: 18px;
+    line-height: 4vh;
+}
+
+table {
+    max-width: 84vw;
+    margin-bottom: 2vh;
+}
+
+th {
+    background-color: #19325a;
+    color: white;
+    border: 1px solid #19325a;
+}
+
+td {
+    border: 1px solid #19325a;
+    margin: 0;
+    text-align: center;
+    width: 20vw;
+    height: 5vh;
+    padding: 1vh 1vw;
+    color: black;
+}
+
+#classes {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    min-width: min(600px, 50vw);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 50vw;
+}
+
+#semester {
+    display: flex;
+    justify-content: space-evenly;
+    width: 15vw;
+}
+
+#given, #wanted {
+    display: flex;
+    flex-direction: column;
+}
+
+.givenclass, .newclass {
+    background-color: white;
+    color: #19325a;
+    border: 1px solid #19325a;
+    border-radius: 50px;
+    margin: 0.5vh 0;
+}
+
+.givenclass option, .newclass option {
+    text-align: center;
+    background-color: white;
+    color: #19325a;
+}
+
+#switches {
+    width: 30px;
+}
+
+.mod1 {
+    background-color: var(--mod1);
+}
+
+.mod2 {
+    background-color: var(--mod2);
+}
+
+.mod3 {
+    background-color: var(--mod3);
+}
+
+.mod4 {
+    background-color: var(--mod4);
+}
+
+.mod5 {
+    background-color: var(--mod5);
+}
+
+.mod6 {
+    background-color: var(--mod6);
+}
+
+.mod7 {
+    background-color: var(--mod7);
+}
+
+.mod8 {
+    background-color: var(--mod8);
+}
+
+#errors {
+    color: red;
+}

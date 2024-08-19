@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head', name='adddrop'); %>
+    </head>
+    <body>
+        <header id="home" class="panel">
+            <%- include('../partials/header'); %>
+        </header>
+        <main>
+            <div id="content">
+                <h2>Add/Drop Calculator</h2>
+                <div id="form">
+                    <div id="classes">
+                        <div id="given">
+                            <h3>Given Classes</h3>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                            <select class="givenclass"></select>
+                        </div>
+                        <br>
+                        <div id="wanted">
+                            <h3>Wanted Classes</h3>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                            <select class="newclass"></select>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="semester">
+                        <div>
+                            <label for="fall">Fall</label>
+                            <input type="radio" id="fall" name="semester" value="fall">
+                        </div>
+                        <div>
+                            <label for="spring">Spring</label>
+                            <input type="radio" id="spring" name="semester" value="spring">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="full">Look at Full Classes?</label>
+                        <input type="checkbox" id="full">
+                    </div>
+                    <div>
+                        <label for="switches">Allow How Many Switches?</label>
+                        <input type="number" id="switches" value="0">
+                    </div>
+                    <button id="submit">Submit</button>
+                </div>
+                <span id="errors"></span>
+                <div id="output">
+                    <table id="schedule"></table>
+                    <button id="redo">Retry</button>
+                </div>
+            </div>
+        </main>
+        <footer id="contact-info" class="panel">
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

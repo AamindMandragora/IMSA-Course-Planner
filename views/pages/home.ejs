@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head', name='common'); %>
+    </head>
+    <body>
+        <header id="home">
+            <%- include('../partials/header'); %>
+        </header>
+        <main>
+            <div id="content">
+                <p>
+                    I made this site because I'm tired of doing this stuff by hand, and I suspect you are too. Didn't get the classes you wanted? Go to the <a href="adddrop">Add/Drop Calculator</a> to see if that can't be changed. Wanna know what mods certain classes are happening, or certain teachers are teaching? Go to the <a href="search">Course/Teacher Searcher</a> and find out! Sooner or later, I'll move my <a href="https://docs.google.com/spreadsheets/d/15nRyk7nFIQSMEbSGTqQiaYRbYvvEOB99JgOfxQK7oBo/edit?gid=269117890#gid=269117890">three-year-plan course selector sheet</a> here too, so stay tuned!
+                </p>
+                <p>
+                    <b>IMPORTANT</b>: This site encodes mods slightly weirdly for any class that has two mods in a row (most science classes, some fine arts classes, some wellness classes, English and History classes like Creative Writing Workshop, Modern Theater, and History of Technology and Culture). For those classes, if the double mod is on a B or D day, it's encoded as mod <b>three</b>, not four. Similarly, if the double mod is on an A or C day, it's encoded as mod <b>four</b>. When entering the classes initially given to you in the Add/Drop calculator or searching them up, make sure to keep this in mind or the site may not provide the desired results.
+                </p>
+            </div>
+        </main>
+        <footer id="contact-info" class="panel">
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

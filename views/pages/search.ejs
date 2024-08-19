@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head', name='search'); %>
+    </head>
+    <body>
+        <header id="home" class="panel">
+            <%- include('../partials/header'); %>
+        </header>
+        <main>
+            <div id="content">
+                <div>
+                    <input id="search" type="text">
+                    <button id="submit">Search</button>
+                </div><br>
+                <table id="results"></table>
+            </div>
+        </main>
+        <footer id="contact-info" class="panel">
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>
