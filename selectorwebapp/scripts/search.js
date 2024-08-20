@@ -103,11 +103,25 @@ async function search(by) {
                 ) {
                     let row = document.createElement('tr');
                     let sem = ['Fall', 'Spring'][sems[j]];
+                    let open = ['Open', 'Full'];
                     row.innerHTML = `<td>${data[i].name}</td><td>${sem}</td>`
                     for (var l = 0; l < 3; l++) {
                         var cell = document.createElement('td');
                         cell.innerHTML = data[i].offerings[sems[j]][k][l];
                         row.appendChild(cell)
+                    }
+                    for (var m = 0; m < 2; m++) {
+                        for (var n = 0; n < data[i].adddrop[m][sems[j]].length; n++) {
+                            if (data[i].adddrop[m][sems[j]][n] == data[i].offerings[sems[j]][k][2]) {
+                                var cell = document.createElement('td');
+                                if (m == 0) {
+                                    cell.innerHTML = 'Open'
+                                } else {
+                                    cell.innerHTML = 'Closed'
+                                }
+                                row.appendChild(cell)
+                            }
+                        }
                     }
                     results.appendChild(row);
                 }
@@ -127,6 +141,7 @@ window.onload = async function (e) {
                                 <th>Section</th>
                                 <th>Teacher</th>
                                 <th>Mods</th>
+                                <th>Status</th>
                             </tr>`
         search(document.getElementById('search').value);
     })
@@ -138,6 +153,7 @@ window.onload = async function (e) {
                                 <th>Section</th>
                                 <th>Teacher</th>
                                 <th>Mods</th>
+                                <th>Status</th>
                             </tr>`
             search(document.getElementById('search').value);
         }
