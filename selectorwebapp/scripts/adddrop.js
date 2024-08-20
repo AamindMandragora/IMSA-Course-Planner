@@ -198,6 +198,7 @@ function checkSemester(data, coursesRequested, coursesGiven, prerequisites=[]) {
         break;
     }
     let p = permutator(courses);
+    shuffleArray(p);
     out = [
         [-1, -1, -1, -1],
         [-1, -1, -1, -1],

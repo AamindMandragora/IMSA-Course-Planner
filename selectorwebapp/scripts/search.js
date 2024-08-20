@@ -110,7 +110,7 @@ async function search(by) {
                         cell.innerHTML = data[i].offerings[sems[j]][k][l];
                         row.appendChild(cell)
                     }
-                    for (var m = 0; m < 2; m++) {
+                    outloop: for (var m = 0; m < 2; m++) {
                         for (var n = 0; n < data[i].adddrop[m][sems[j]].length; n++) {
                             if (data[i].adddrop[m][sems[j]][n] == data[i].offerings[sems[j]][k][2]) {
                                 var cell = document.createElement('td');
@@ -120,6 +120,7 @@ async function search(by) {
                                     cell.innerHTML = 'Closed'
                                 }
                                 row.appendChild(cell)
+                                break outloop;
                             }
                         }
                     }
