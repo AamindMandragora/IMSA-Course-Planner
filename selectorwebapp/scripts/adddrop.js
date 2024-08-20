@@ -337,15 +337,12 @@ async function onLoad() {
             coursesGiven.push(s[i].value);
         }
         let courses = name2numbers(data, coursesRequested);
-        let flags = [false, false, false];
+        let flags = [false, false];
         for (var i = 0; i < courses.length; i++) {
             if (data[courses[i]].subject == "Math") {
                 flags[0] = true;
             } else if (data[courses[i]].subject == "English") {
                 flags[1] = true;
-            } else if (data[courses[i]].subject == "History") {
-                flags[2] = true;
-            }
         }
         if (coursesRequested.count("") <= 3 && flags.count(false) == 0) {
             makeTable(data, coursesRequested, coursesGiven, prerequisites);
@@ -360,9 +357,6 @@ async function onLoad() {
         }
         if (flags[1] == false) {
             document.getElementById("errors").innerText += 'You need at least one english class per semester.\n'
-        }
-        if (flags[2] == false) {
-            document.getElementById("errors").innerText += 'You need at least one history class per semester.\n'
         }
     })
 }
