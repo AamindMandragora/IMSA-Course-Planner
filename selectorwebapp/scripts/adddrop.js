@@ -344,16 +344,15 @@ async function onLoad() {
                 flags[0] = true;
             } else if (data[courses[i]].subject == "English") {
                 flags[1] = true;
+            }
         }
         if (coursesRequested.count("") <= 3 && flags.count(false) == 0) {
             makeTable(data, coursesRequested, coursesGiven, prerequisites);
         }
         if (coursesRequested.count("") > 3) {
-            //add more classes
             document.getElementById("errors").innerText += 'You need to add more classes.\n'
         }
         if (flags[0] == false) {
-            //you need a math class
             document.getElementById("errors").innerText += 'You need at least one math class per semester.\n'
         }
         if (flags[1] == false) {
