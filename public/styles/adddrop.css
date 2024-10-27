@@ -36,13 +36,6 @@ td {
     color: black;
 }
 
-#classes {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    min-width: min(600px, 50vw);
-}
-
 #form {
     display: flex;
     flex-direction: column;
@@ -57,12 +50,13 @@ td {
     width: max(15vw, 15vh);
 }
 
-#given, #wanted {
+#wanted {
+    align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-.givenclass, .newclass {
+.newclass {
     background-color: white;
     color: #19325a;
     border: 1px solid #19325a;
@@ -71,7 +65,7 @@ td {
     max-width: 20vw;
 }
 
-.givenclass option, .newclass option {
+.newclass option {
     text-align: center;
     background-color: white;
     color: #19325a;

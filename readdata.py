@@ -5,7 +5,7 @@ from pprint import pp as pprint
 import json
 
 pdfpath = r"adddrop.pdf"
-jsonpath = r"selectorwebapp\json\courses.json"
+jsonpath = r"public\json\courses.json"
 
 rows = []
 rrows = [[], [], [], [], [], []]
@@ -39,36 +39,15 @@ for i in range(len(rows)):
         calc.insert(3, teach)
     if len(calc) == 6:
         for i in range(len(calc)):
-            if i == 4:
-                if (re.search(r"\d\(A-D\)", calc[i])):
-                    rrows[i].append(calc[i][0])
-                elif (re.search(r"\d\(A-B,( |)D\)|\d\(A,( |)C-D\)", calc[i])):
-                    rrows[i].append(calc[i][0])
-                elif (re.search(r"\d-\d\(A,C\)", calc[i])):
-                    rrows[i].append(calc[i][2])
-                elif (re.search(r"\d-\d\(B,D\)", calc[i])):
-                    rrows[i].append(calc[i][0])
-                elif (re.search(r"\d\(C\) \d\(A,C\)", calc[i])):
-                    rrows[i].append(calc[i][5])
-                elif (re.search(r"\d\(B,D\) \d\(B\)", calc[i])):
-                    rrows[i].append(calc[i][0])
-                elif (re.search(r"\d-\d\(A\)", calc[i])):
-                    rrows[i].append(calc[i][2])
-                elif (re.search(r"\d-\d\(B\)", calc[i])):
-                    rrows[i].append(calc[i][0])
-                else:
-                    rrows[i].append(calc[i][0])
-            elif i == 5:
+            if i == 5:
                 rrows[i].append(int(calc[i]))
             else:
                 rrows[i].append(calc[i])
 
 df = DataFrame({'Section': rrows[0], 'Name': rrows[1], 'Term': rrows[2], 'Teacher': rrows[3], 'Mods': rrows[4], 'Open': rrows[5]})
-print(df)
 f = open(jsonpath)
 courses = json.load(f)
 for i in range(len(courses)):
-    courses[i]['adddrop'] = [[[], []], [[], []]]
     courses[i]['offerings'] = [[], []]
 
 for i in range(len(df)):
@@ -77,17 +56,9 @@ for i in range(len(df)):
         if df['Name'][i] == courses[j]['name']:
             found = True
             if df['Term'][i] == 'Fall':
-                if int(df['Open'][i]) == 1:
-                    courses[j]['adddrop'][0][0].append(int(df['Mods'][i]))
-                elif int(df['Open'][i]) == 0:
-                    courses[j]['adddrop'][1][0].append(int(df['Mods'][i]))
-                courses[j]['offerings'][0].append([df['Section'][i], df['Teacher'][i], int(df['Mods'][i])])
+                courses[j]['offerings'][0].append([df['Section'][i], df['Teacher'][i], df['Mods'][i], int(df['Open'][i])])
             if df['Term'][i] == 'Spring':
-                if int(df['Open'][i]) == 1:
-                    courses[j]['adddrop'][0][1].append(int(df['Mods'][i]))
-                elif int(df['Open'][i]) == 0:
-                    courses[j]['adddrop'][1][1].append(int(df['Mods'][i]))
-                courses[j]['offerings'][1].append([df['Section'][i], df['Teacher'][i], int(df['Mods'][i])])
+                courses[j]['offerings'][1].append([df['Section'][i], df['Teacher'][i], df['Mods'][i], int(df['Open'][i])])
             break
 
 f.close()

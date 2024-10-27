@@ -44,7 +44,6 @@ header, footer {
     display: flex;
     align-items: center;
     padding: 0 5vw;
-    color: black;
     height: 10vh;
     color: white;
 }
