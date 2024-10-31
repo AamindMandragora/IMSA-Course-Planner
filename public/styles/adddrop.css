@@ -114,3 +114,9 @@ td {
 #output {
     flex-direction: column;
 }
+
+textarea {
+    width: 40vw;
+    height: 20vh;
+    font-family: inherit;
+}
